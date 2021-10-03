@@ -16,13 +16,19 @@
 <script>
   export let user
   import { fade } from "svelte/transition"
+
   const fullName = `${user.firstName} ${user.lastName}`
+
+  const goBack = () => {
+    window.history.back()
+  }
 </script>
 
 <svelte:head>
   <title>Profile for {fullName}</title>
 </svelte:head>
 <main>
+  <button on:click={goBack}>Back</button>
   <h1>{fullName}</h1>
 
   <div class="box" in:fade>
@@ -39,11 +45,21 @@
   main {
     padding: 2rem 0;
   }
-
+  button {
+    border: 1px solid #e2e2e2;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    color: #222323;
+  }
+  button:active {
+    background-color: #e2e2e2;
+  }
   h1 {
     font-size: 2rem;
     letter-spacing: -1px;
     color: black;
+    margin-top: 0;
   }
   .box {
     display: flex;

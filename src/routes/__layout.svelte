@@ -1,22 +1,39 @@
 <script>
   import "../app.css"
+  let currentPage = "home"
 </script>
 
 <svelte:head>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<nav>
-  <a href="." class="logo">SvelteKit Avatar</a>
-  <div class="menu">
-    <a href=".">Home</a>
-    <a href="/about">About</a>
-  </div>
-</nav>
+<div class="container">
+  <nav>
+    <a href="." class="logo" on:click={() => (currentPage = "home")}
+      >SvelteKit Avatar</a
+    >
+    <div class="menu">
+      <a
+        href="."
+        class={currentPage === "home" ? "active" : ""}
+        on:click={() => (currentPage = "home")}>Home</a
+      >
+      <a
+        href="."
+        class={currentPage === "about" ? "active" : ""}
+        on:click={() => (currentPage = "about")}>About</a
+      >
+    </div>
+  </nav>
 
-<slot />
+  <slot />
+</div>
 
 <style>
+  .container {
+    margin: auto;
+    max-width: 680px;
+  }
   nav {
     padding-top: 1rem;
     display: flex;
@@ -26,7 +43,9 @@
     position: relative;
     color: hsl(202, 4%, 41%);
   }
-
+  .active {
+    text-decoration: underline;
+  }
   .logo::after {
     content: "beta";
     position: absolute;

@@ -1,7 +1,7 @@
 import faker from "faker"
 
 const generateUsers = () =>
-  [...Array(52)].map(() => {
+  [...Array(24)].map(() => {
     const lastName = faker.name.lastName()
 
     return {
