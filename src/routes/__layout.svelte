@@ -19,7 +19,7 @@
         on:click={() => (currentPage = "home")}>Home</a
       >
       <a
-        href="."
+        href="/about"
         class={currentPage === "about" ? "active" : ""}
         on:click={() => (currentPage = "about")}>About</a
       >
