@@ -28,7 +28,6 @@
   <title>Profile for {fullName}</title>
 </svelte:head>
 <main>
-  <button on:click={goBack}>Back</button>
   <h1>{fullName}</h1>
 
   <div class="box" in:fade>
@@ -39,6 +38,7 @@
       <li><span>Email</span> {user.email}</li>
     </ul>
   </div>
+  <button on:click={goBack}>Back</button>
 </main>
 
 <style>
@@ -51,6 +51,8 @@
     cursor: pointer;
     background-color: #f1f1f1;
     color: #222323;
+    margin: 2rem auto;
+    display: block;
   }
   button:active {
     background-color: #e2e2e2;
@@ -60,9 +62,11 @@
     letter-spacing: -1px;
     color: black;
     margin-top: 0;
+    text-align: center;
   }
   .box {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     align-items: center;
   }

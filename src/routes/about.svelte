@@ -17,10 +17,14 @@
 
 <style>
   main {
-    font-size: 1.5rem;
-    justify-content: center;
+    font-size: 1rem;
+    padding: 2rem 0;
+    text-align: center;
   }
   h1 {
+    font-size: 2rem;
+    letter-spacing: -1px;
     color: black;
+    margin-top: 0;
   }
 </style>
